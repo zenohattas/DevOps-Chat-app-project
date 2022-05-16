@@ -1,0 +1,18 @@
+version: "3.3"
+services:
+  ingress: ## name of proxy container, standard name for incomming traffic on the traffic handler
+    image: nginx:latest
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro ## ro: read only / copying the nginx config to the right linux file location
+      - ./frontend:/var/www/static:ro 
+    #build: ./frontend/.
+    ports:
+      - 127.0.0.1:8000:80
+    depends_on:
+      - auth
+      - chat
+
+  auth:
+    build: ./authAPI/.
+  chat:
+    build: ./chatAPI/.
