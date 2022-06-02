@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: chat
-          image: 121706/devopschatbase:latest
+          image: zenohattas/chat-app-dev-chat:latest
           ports:
           - containerPort: 3000
 ---
