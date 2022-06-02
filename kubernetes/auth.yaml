@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: auth
-          image: 121706/devopschatauth:latest
+          image: zenohattas/chat-app-dev-auth:latest
           ports:
           - containerPort: 3000
 ---
