@@ -1,6 +1,7 @@
 FROM nginx:latest
 
-COPY ../frontend/*.* /var/www/static/
-COPY ../nginx.conf /etc/nginx/
+COPY ./nginx-kubernetes.conf /etc/nginx/nginx.conf
+COPY ./www/ /var/www/static/
+
 
 EXPOSE 80
